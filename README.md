@@ -11,7 +11,7 @@ This repository is structured into the following subdirectories containing the r
 1. **Model init data preprocessing scripts**: 
     This directory contains all needed scripts to prepare the input files to run FourCastNetv2 or Pangu-Weather. 
 
-    - Preprocessed CMIP6 ([Eyring et al (2016)](https://doi.org/10.5194/gmd-9-1937-201)) data is needed to calculate the climate deltas applied to initial conditions. We provide the multimodel mean of 10 models interpolated to a common grid of 2.5x2.5deg. Preprocessed files needed to apply the ACC deltas can be found in the DATA folder in this repository. The original CMIP6 historical data is available through the ESGF nodes [here](https://aims2.llnl.gov/search/cmip6/). 
+    - Preprocessed CMIP6 ([Eyring et al (2016)](https://doi.org/10.5194/gmd-9-1937-2016)) data is needed to calculate the climate deltas applied to initial conditions. We provide the multimodel mean of 10 models interpolated to a common grid of 2.5x2.5deg. Preprocessed files needed to apply the ACC deltas can be found in the DATA folder in this repository. The original CMIP6 historical data is available through the ESGF nodes [here](https://aims2.llnl.gov/search/cmip6/). 
     
 2. **AI model simulation scripts**: 
     This directory contains the basic scripts to be able to run the AI-based weather models. Using the external package Earth2MIP we have tested FourCastNetv2 and Pangu-Weather, but depending on your hardware you might be able to use other models too.
@@ -22,15 +22,26 @@ This repository is structured into the following subdirectories containing the r
 
 ## Installation:
 
-***
 ### Conda (Recommended)
 
-
+- clone the repository into you machine:
 ```bash
-conda env create -f environments/attribution_with_ai.yaml
+git clone https://github.com/bernatj/AI-based-Attribution.git
 ```
 
-***
+- create a new conda environment:
+```bash
+conda env create -f environments/attribution_with_ai.yaml
+conda activate attribution_with_ai
+```
 
-- Clone the repository DDP (https://github.com/jejjohnson/ddf.git) in you desired directory and modify the path to it the scripts in (2).
+- if you want to be able to run the models you need to manually install APEX using pip:
+```bash
+pip install git+https://github.com/NVIDIA/apex.git -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext"
+```
+
+- clone the repository DDP (https://github.com/jejjohnson/ddf.git) in you desired directory and modify the path to it the scripts in (2):
+```bash
+git clone https://github.com/jejjohnson/ddf.git
+```
 
