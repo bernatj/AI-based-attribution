@@ -1,0 +1,58 @@
+name: attribution_with_ai
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  # - conda-forge::jupytext
+  # - conda-forge::jupyter-book
+  # - conda-forge::myst-parser
+  # - conda-forge::pre-commit
+  # - conda-forge::"nodejs>=20,<21"
+  # - conda-forge::mystmd
+  - conda-forge::regionmask
+  - conda-forge::xarray
+  # DATASETS
+  - conda-forge::xmip
+  - conda-forge::cf_xarray
+  - conda-forge::intake-esm
+  # STUFF
+  - cuda-libraries    # cuda meta-package
+  - cudnn             # specifically for cudnn
+  - cuda-nvcc         # compatible nvidia C compiler is available
+  # JAX
+  - jaxlib
+  - cuda-version      # pulling packages that are CUDA12 compatible
+  - jax
+  # VISUALIZATION
+  - cartopy
+  - cmocean
+  - seaborn
+  - matplotlib
+  - xmovie
+  - ipykernel
+  - ffmpeg
+  - pip
+  - pip:
+      - cookiecutter
+      - autoroot
+      - python-dateutil
+      - pydantic
+      # DATA ACCESS
+      - climetlab
+      - xee
+      - ecmwf-api-client
+      - cdsapi
+      - gcsfs
+      # OTHER
+      # AI MODELS
+      - git+https://github.com/NVIDIA/earth2mip.git
+      # PANGU Dependencies
+      - onnxruntime-gpu
+      - "ruamel.yaml<0.18.0"
+      # GRAPHCAST Dependencies
+      # - git+https://github.com/deepmind/graphcast/archive/e622a15c1b9742d78f9b662f2af262604d58c204.tar.gz
+      - git+https://github.com/google-deepmind/graphcast.git
+      # Extra Stuff
+      - loguru 
+      - tqdm
