@@ -22,6 +22,15 @@ This repository is structured into the following subdirectories containing the r
 
 ## Installation:
 
-- Create a conda enviroment using the following file:  ```ai-attribution.yaml```
-- Clone the repository DDP (https://github.com/jejjohnson/ddf.git) and modify the path in the scripts in (2).
+***
+### Conda (Recommended)
+
+
+```bash
+conda env create -f environments/attribution_with_ai.yaml
+```
+
+***
+
+- Clone the repository DDP (https://github.com/jejjohnson/ddf.git) in you desired directory and modify the path to it the scripts in (2).
 
