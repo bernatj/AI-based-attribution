@@ -46,7 +46,7 @@ dependencies:
       - gcsfs
       # OTHER
       # AI MODELS
-      - git+https://github.com/NVIDIA/earth2mip.git
+      - git+https://github.com/NVIDIA/earth2mip.git@v0.1.0
       # PANGU Dependencies
       - onnxruntime-gpu
       - "ruamel.yaml<0.18.0"
